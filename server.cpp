@@ -35,26 +35,3 @@ Server::~Server(){
     disconnect_all();
     close(server_descript);
 };
-void Server::listen_clients(){
-    struct sockaddr_in addr;
-    uint32_t len = sizeof(addr);
-    while(listen_on){
-    syn_lis.unlock();
-    uint32_t client_desc = accept(server_descript,(sockaddr*)&addr,&len);
-    if(client_desc==-1){
-    error = 102;
-    return;
-    }
-    Client* client = new Client(client_desc,&addr);
-    clients.push_back(client);
-    if(client->start()==-1){
-        error = 102;
-        client->~Client();
-        clients.pop_back(); // Erase client
-        delete client;
-        return;
- 
-    }   
-    syn_lis.lock(); // Guard listen_on
-    }
-};

@@ -1,5 +1,9 @@
 {
     "files.associations": {
-        "*.tpp": "cpp" //все tpp файлы
+        "*.tpp": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "vector": "cpp",
+        "new": "cpp"
     },
 }

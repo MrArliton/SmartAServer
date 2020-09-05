@@ -14,7 +14,7 @@
             },
             "command": "g++", 
             "args": [
-                "-g", "-Wall", "main.cpp", "server.cpp","client.cpp", "-o", "main"
+                "-g", "-Wall","-pthread", "main.cpp", "server.cpp","client.cpp", "-o", "bin/main"
             ],
         },
         {  
