@@ -1,0 +1,31 @@
+{
+    "version": "2.0.0",
+
+
+
+    "tasks": [
+        {    
+             "label": "Build C++ project",
+            "type": "shell",
+        
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "command": "g++", 
+            "args": [
+                "-g", "-Wall", "main.cpp", "server.cpp","client.cpp", "-o", "main"
+            ],
+        },
+        {  
+            "label": "Build & run C++ project", //Имя задача
+            "type": "shell",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "command": "main", //Соответвенно сборка
+        }
+        
+    ]
+}

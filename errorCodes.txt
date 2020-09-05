@@ -1,0 +1,6 @@
+10 - error with send client;
+11 - error with recv client;
+
+100 - error with bind server;
+101- error with listening client(start server);
+102 - error with accept client;
