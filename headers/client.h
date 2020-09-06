@@ -1,4 +1,5 @@
 #pragma once
+#include "logger.h"
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -7,7 +8,7 @@
 #include <thread>
 #include <mutex>
 
-class Client
+class Client    
 {
 private:
     uint32_t *socket_descript = 0;

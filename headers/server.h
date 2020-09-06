@@ -1,6 +1,7 @@
 #pragma once
 #include "client.h"
 #include <vector>
+#include "const.h"
 
 class Server{
     private:
@@ -12,7 +13,9 @@ class Server{
         //
         uint8_t listen_on = false;
         std::mutex syn_lis;
-        // 
+        // log
+        uint16_t log_index; 
+        void printlog(std::string mes,uint16_t level,bool error);
 // Поток
 void static listen_clients(Server* arg_s){
     struct sockaddr_in addr;

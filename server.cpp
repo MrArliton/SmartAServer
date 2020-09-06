@@ -1,6 +1,16 @@
 #include "headers/server.h"
 
+void Server::printlog(std::string mes,uint16_t level,bool error){
+    if(!error){
+    log::printLogFile(mes,"Server","Message",log_index,level);
+    }else{
+    log::printLogFile(mes,"Server","Error",log_index,level);
+    }   
+}
 Server::Server(const uint16_t port,uint16_t size_queue){
+    //creating log
+    log_index = log::bindPathLog(const_m::file_log);
+    //
     server_descript = socket(AF_INET,SOCK_STREAM,0);
     addr.sin_port = htons(port);
     addr.sin_addr.s_addr = htonl(INADDR_ANY);

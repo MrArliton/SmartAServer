@@ -4,3 +4,7 @@
 100 - error with bind server;
 101- error with listening client(start server);
 102 - error with accept client;
+
+201 - error with log write
+202 - error with write mode
+203 - error with write data
